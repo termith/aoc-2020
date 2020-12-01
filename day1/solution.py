@@ -9,7 +9,6 @@ with open('input') as f:
 def find_sum(array, target=2020):
     i = 0
     j = len(array) - 1
-
     while i < j:
         s = array[i] + array[j]
         if s > target:
