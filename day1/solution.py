@@ -2,8 +2,6 @@
     P1. Find two numbers in array which sum is given number (2020)
     P2. Do the same for three numbers
 """
-with open('input') as f:
-    numbers = sorted(list(map(int, f.readlines())))
 
 
 def find_sum(array, target=2020):
@@ -21,9 +19,13 @@ def find_sum(array, target=2020):
     return None
 
 
-for idx in range(len(numbers)):
-    result = find_sum(numbers[idx + 1:], 2020 - numbers[idx])
-    if result is not None:
-        print(numbers[idx], *result)
-        print(result[0] * result[1] * numbers[idx])
-        break
+if __name__ == '__main__':
+    with open('input') as f:
+        numbers = sorted(list(map(int, f.readlines())))
+
+    for idx in range(len(numbers)):
+        result = find_sum(numbers[idx + 1:], 2020 - numbers[idx])
+        if result is not None:
+            print(numbers[idx], *result)
+            print(result[0] * result[1] * numbers[idx])
+            break
